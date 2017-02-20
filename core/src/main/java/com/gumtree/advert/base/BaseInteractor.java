@@ -1,4 +1,4 @@
-package com.gumtree.base;
+package com.gumtree.advert.base;
 
 /**
  * Copyright (c) 2017.
@@ -8,4 +8,5 @@ package com.gumtree.base;
  * @since 20/02/2017
  */
 public interface BaseInteractor {
+    void unbind();
 }

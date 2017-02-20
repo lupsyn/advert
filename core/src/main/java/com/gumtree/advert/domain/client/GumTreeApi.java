@@ -1,8 +1,8 @@
-package com.gumtree.domain.client;
+package com.gumtree.advert.domain.client;
 
 
 
-import com.gumtree.domain.model.Advert;
+import com.gumtree.advert.domain.model.Advert;
 
 import retrofit2.http.GET;
 import retrofit2.http.Query;

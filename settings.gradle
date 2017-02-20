@@ -1,1 +1,3 @@
 include ':app', ':core'
+project(':app').projectDir = new File('app')
+project(':core').projectDir = new File('core')

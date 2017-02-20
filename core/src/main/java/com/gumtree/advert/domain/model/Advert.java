@@ -1,4 +1,4 @@
-package com.gumtree.domain.model;
+package com.gumtree.advert.domain.model;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -21,6 +21,8 @@ public class Advert {
     private List<String> links;
     @SerializedName("price")
     private String price;
+    @SerializedName("currency")
+    private String currency;
     @SerializedName("location")
     private String location;
     @SerializedName("date")

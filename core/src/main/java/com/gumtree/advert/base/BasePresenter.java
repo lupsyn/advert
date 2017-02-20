@@ -1,4 +1,4 @@
-package com.gumtree.base;
+package com.gumtree.advert.base;
 
 /**
  * Copyright (c) 2017.

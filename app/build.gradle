@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'jacoco-android'
+
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -42,13 +44,13 @@ android {
         }
     }
 }
-
+jacocoAndroidUnitTestReport {
+    // fix jacoco issue with ButterKnife
+    excludes += ['**/*$ViewBinder*.*']
+}
 dependencies {
+    compile project(':core')
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:25.1.1'
 
     testCompile rootProject.ext.testLibraries.junit
     testCompile rootProject.ext.testLibraries.robolectric
@@ -76,12 +78,14 @@ dependencies {
 
     compile rootProject.ext.libraries.picasso
 
-//    compile rootProject.ext.libraries.butterknife
-//    apt rootProject.ext.aptLibraries.butterknifeCompiler
+    compile rootProject.ext.libraries.butterknife
+    apt rootProject.ext.aptLibraries.butterknifeCompiler
 
     compile rootProject.ext.libraries.dagger
     apt rootProject.ext.aptLibraries.daggerCompiler
     androidTestApt rootProject.ext.aptLibraries.daggerCompiler
+
+    compile rootProject.ext.libraries.timber
 
     compile 'com.android.support:support-annotations:25.0.0'
 
