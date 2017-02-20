@@ -1,0 +1,35 @@
+apply plugin: 'java'
+
+configurations {
+    provided
+}
+
+sourceSets {
+    main {
+        compileClasspath += configurations.provided
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile rootProject.ext.testLibraries.junit
+    testCompile rootProject.ext.testLibraries.mockito
+
+    compile rootProject.ext.libraries.dagger
+
+    provided rootProject.ext.aptLibraries.daggerCompiler
+
+    compile rootProject.ext.libraries.rxjava
+
+    compile rootProject.ext.libraries.retrofit
+    compile rootProject.ext.libraries.retrofitConverter
+    compile rootProject.ext.libraries.retrofitAdapter
+
+    compile rootProject.ext.libraries.okhttp
+    compile rootProject.ext.libraries.okhttpLogging
+
+
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
