@@ -43,6 +43,8 @@
         android:orientation="horizontal">
 
         <Button
+
+            android:id="@+id/contact_call"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
@@ -54,6 +56,7 @@
             android:textColor="@android:color/white"/>
 
         <Button
+            android:id="@+id/contact_sms"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="10dp"

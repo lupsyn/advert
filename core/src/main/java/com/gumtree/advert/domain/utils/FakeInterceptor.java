@@ -47,9 +47,11 @@ public class FakeInterceptor implements Interceptor {
             + "                \"sellertype\" : \"Private\","
             + "                \"mileage\" : \"10000\","
             + "                \"fueltype\" : \"Electric\","
-            + "                \"longdescription\" : \"The character of KITT (Knight Industries Two Thousand) in the original Knight Rider series was physically embodied as a modified1982 Pontiac Trans Am with numerous special features such as Turbo Boost (which allowed quick bursts of speed or jumping over obstacles), the ability to drive 'himself', a front-mounted scanner bar that (among other things) allowed KITT to 'see' (and a nod to series creator, Glen A. Larson and his Battlestar Galactica's Cylons), and 'molecular bonded shell' body armor, portrayed to be invulnerable to diamond headed drills, small arms fire, the impact of thrown objects, and even high speed impact with cinder block wall. The armor could also resist close explosive blasts although a direct hit could cause severe damage. A refit in the 1985 season included the addition of Super Pursuit Mode and a convertible top. The car's voice was supplied by actor William Daniels.\","
+            + "                \"longdescription\" : \"The character of KITT (Knight Industries Two Thousand) in the original Knight Rider series was physically embodied as a modified\n1982 Pontiac Trans Am with numerous special features such as Turbo Boost (which allowed quick bursts of speed or jumping over obstacles), the ability to drive 'himself', a front-mounted scanner bar that (among other things) allowed KITT to 'see' (and a nod to series creator, Glen A. Larson and his Battlestar Galactica's Cylons), and 'molecular bonded shell' body armor, portrayed to be invulnerable to diamond headed drills, small arms fire, the impact of thrown objects, and even high speed impact with cinder block wall. The armor could also resist close explosive blasts although a direct hit could cause severe damage. A refit in the 1985 season included the addition of Super Pursuit Mode and a convertible top. The car's voice was supplied by actor William Daniels.\","
             + "                \"mobilenumber\" : \"1234-1234-1234\","
-            + "                \"mail\" : \"test@test.com\""
+            + "                \"mail\" : \"test@test.com\","
+            + "                \"lat\" : 51.508530," // 51.508530, -0.076132.
+            + "                \"long\" : -0.076132"
             + "}";
 
     @Override

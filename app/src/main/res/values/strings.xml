@@ -16,4 +16,5 @@
 
     <string name="item_call">Call</string>
     <string name="item_sms">SMS</string>
+    <string name="google_maps_key">AIzaSyBhkRs_jxav6G1mvp7wkya8siSliYdt3Oc</string>
 </resources>

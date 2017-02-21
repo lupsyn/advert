@@ -58,6 +58,13 @@ public class Advert {
     @SerializedName("postingfor")
     private String postingfor;
 
+    @SerializedName("lat")
+    private Double lat;
+
+    @SerializedName("long")
+    private Double lng;
+
+
     public Advert() {
     }
 
@@ -216,4 +223,13 @@ public class Advert {
     public String getPostingfor() {
         return postingfor;
     }
+
+    public Double getLng() {
+        return lng;
+    }
+
+    public Double getLat() {
+        return lat;
+    }
+
 }

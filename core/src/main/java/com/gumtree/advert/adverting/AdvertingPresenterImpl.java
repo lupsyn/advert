@@ -22,6 +22,7 @@ public class AdvertingPresenterImpl implements AdvertingPresenter {
     private AdvertingView view;
     private Subscription subscription = Subscriptions.empty();
     private SchedulerProvider scheduler;
+    private Advert mAdvert;
 
     @Inject
     public AdvertingPresenterImpl(SchedulerProvider scheduler) {
@@ -40,15 +41,14 @@ public class AdvertingPresenterImpl implements AdvertingPresenter {
                 .observeOn(scheduler.mainThread())
                 .subscribe(advert -> {
                             if (null != view) {
-                            view.populateView(advert);
+                                this.mAdvert = advert;
+                                view.populateView(advert);
+
                             }
                         },
                         // handle exceptions
                         throwable -> {
-                            if (null != view) {
-                                view.hideProgress();
-
-                            }
+                            view.showError(throwable);
                         });
     }
 
@@ -65,6 +65,26 @@ public class AdvertingPresenterImpl implements AdvertingPresenter {
     @Override
     public void onBack() {
 
+    }
+
+    @Override
+    public void onCompassClick() {
+        view.showInMap(mAdvert);
+    }
+
+    @Override
+    public void onCallClick() {
+        view.call(mAdvert);
+    }
+
+    @Override
+    public void onShareClick() {
+        view.share(mAdvert);
+    }
+
+    @Override
+    public void onSmsClick() {
+        view.sms(mAdvert);
     }
 
 

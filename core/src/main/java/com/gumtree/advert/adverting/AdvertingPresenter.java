@@ -20,4 +20,11 @@ interface AdvertingPresenter extends BasePresenter<AdvertingView> {
 
     void onBack();
 
+    void onCompassClick();
+
+    void onCallClick();
+
+    void onShareClick();
+
+    void onSmsClick();
 }

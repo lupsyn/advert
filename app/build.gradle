@@ -26,7 +26,7 @@ android {
             versionNameSuffix '-debug'
 
             // Run code coverage reports by default on debug builds.
-            testCoverageEnabled true
+            testCoverageEnabled false
         }
     }
 //    compileOptions {
@@ -92,7 +92,8 @@ dependencies {
 
     compile rootProject.ext.libraries.timber
 
-    compile 'com.android.support:support-annotations:25.1.1'
+    compile rootProject.ext.libraries.googlemap
+    compile rootProject.ext.libraries.annotation
 
 
 }

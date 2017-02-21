@@ -6,6 +6,7 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.ShareCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -72,11 +73,16 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.item_posting_for)
     TextView mPostingFor;
 
+    @BindView(R.id.contact_sms)
+    TextView mContactSms;
+    @BindView(R.id.contact_call)
+    TextView mContactCall;
 
     public static final String TAG_ADVERT_FRAGMENT = "advert_fragment";
     private AdvertingFragment mAdvertingFragment;
     private MainAdapter mMainAdapter;
     CompositeSubscription subscriptions;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +97,7 @@ public class MainActivity extends BaseActivity {
         mRecyclerView.setAdapter(mMainAdapter);
 
         Timber.d("Main Activity Created");
+
         setupToolbar();
 
         if (null == savedInstanceState) {
@@ -100,7 +107,6 @@ public class MainActivity extends BaseActivity {
             mAdvertingFragment = (AdvertingFragment) getSupportFragmentManager().findFragmentByTag(TAG_ADVERT_FRAGMENT);
 
         }
-        mAppBarLayout.setExpanded(false, true);
         disableScrolling();
 
     }
@@ -166,19 +172,6 @@ public class MainActivity extends BaseActivity {
         application.releaseAdvertingSubComponent();
     }
 
-    @OnClick(R.id.toolbar_back)
-    void onToolbarBack(View view) {
-        this.onBackPressed();
-    }
-
-    @OnClick(R.id.toolbar_share)
-    void onToolbarShare(View view) {
-    }
-
-    @OnClick(R.id.toolbar_favourite)
-    void onToolbarFavourite(View view) {
-    }
-
 
     private void setupToolbar() {
         setSupportActionBar(toolbar);
@@ -190,24 +183,37 @@ public class MainActivity extends BaseActivity {
         fragmentTransaction.commitAllowingStateLoss();
     }
 
-    private void collapseToolbar() {
-        CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) mAppBarLayout.getLayoutParams();
-        AppBarLayout.Behavior behavior = (AppBarLayout.Behavior) params.getBehavior();
-        if (behavior != null) {
-            behavior.onNestedFling(mCoordinatorLayout, mAppBarLayout, null, 0, 10000, true);
-        }
-    }
-
-    private void expandToolbar() {
-        CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) mAppBarLayout.getLayoutParams();
-        AppBarLayout.Behavior behavior = (AppBarLayout.Behavior) params.getBehavior();
-        if (behavior != null) {
-            behavior.setTopAndBottomOffset(0);
-            behavior.onNestedPreScroll(mCoordinatorLayout, mAppBarLayout, null, 0, 1, new int[2]);
-        }
-    }
-
     private void disableScrolling() {
+        mAppBarLayout.setExpanded(false, true);
         mRecyclerView.setNestedScrollingEnabled(false);
     }
+
+
+    @OnClick(R.id.toolbar_back)
+    void onToolbarBack(View view) {
+        this.onBackPressed();
+    }
+
+    @OnClick(R.id.toolbar_share)
+    void onToolbarShare(View view) {
+        mAdvertingFragment.onShareClick();
+
+//
+    }
+
+    @OnClick(R.id.toolbar_favourite)
+    void onToolbarFavourite(View view) {
+
+    }
+
+    @OnClick(R.id.contact_call)
+    void onContactCall(View view) {
+        mAdvertingFragment.onCallClick();
+    }
+
+    @OnClick(R.id.contact_sms)
+    void onContactSms(View view) {
+        mAdvertingFragment.onSmsClick();
+    }
+
 }

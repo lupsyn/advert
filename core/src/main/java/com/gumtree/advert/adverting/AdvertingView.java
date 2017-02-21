@@ -12,26 +12,20 @@ import java.util.List;
  * @author enricodelzotto
  * @since 20/02/2017
  */
-public interface AdvertingView extends BaseView{
-
-    void showQueryNoResult();
+public interface AdvertingView extends BaseView {
 
     void showError(Throwable throwable);
 
-    void showProgress();
-
-    void hideProgress();
-
     void showServiceError(ApiResponseCodeException throwable);
 
-    void onBack();
-
-    void disableScroll();
-
-    void enableScroll();
-
-//    void populateGallery(List<String> links);
-//
     void populateView(Advert advert);
+
+    void showInMap(Advert advert);
+
+    void call(Advert advert);
+
+    void sms(Advert advert);
+
+    void share(Advert advert);
 
 }
