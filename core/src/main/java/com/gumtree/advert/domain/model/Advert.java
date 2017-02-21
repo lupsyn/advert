@@ -53,7 +53,10 @@ public class Advert {
     private String mobilenumber;
     @SerializedName("mail")
     private String mail;
-
+    @SerializedName("name")
+    private String name;
+    @SerializedName("postingfor")
+    private String postingfor;
 
     public Advert() {
     }
@@ -204,5 +207,13 @@ public class Advert {
 
     public String getCurrency() {
         return currency;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPostingfor() {
+        return postingfor;
     }
 }

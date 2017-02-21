@@ -14,4 +14,6 @@
     <string name="item_mileage">Mileage</string>
     <string name="item_fueltype">Fuel type</string>
 
+    <string name="item_call">Call</string>
+    <string name="item_sms">SMS</string>
 </resources>

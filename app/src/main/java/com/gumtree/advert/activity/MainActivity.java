@@ -10,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gumtree.advert.ApplicationComponent;
@@ -66,6 +67,12 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.toolbar_layout)
     CollapsingToolbarLayout mCollapsingToolbarLayout;
 
+    @BindView(R.id.item_contact_name)
+    TextView mContactName;
+    @BindView(R.id.item_posting_for)
+    TextView mPostingFor;
+
+
     public static final String TAG_ADVERT_FRAGMENT = "advert_fragment";
     private AdvertingFragment mAdvertingFragment;
     private MainAdapter mMainAdapter;
@@ -120,6 +127,8 @@ public class MainActivity extends BaseActivity {
     }
 
     public void populateView(Advert advert) {
+        mContactName.setText(advert.getName());
+        mPostingFor.setText(advert.getPostingfor());
         mMainAdapter.clear();
         // ...the data has come back, add new items to your adapter...
         mMainAdapter.addAll(advert.getLinks(), new Callback() {
@@ -198,8 +207,7 @@ public class MainActivity extends BaseActivity {
         }
     }
 
-    private void disableScrolling()
-    {
+    private void disableScrolling() {
         mRecyclerView.setNestedScrollingEnabled(false);
     }
 }

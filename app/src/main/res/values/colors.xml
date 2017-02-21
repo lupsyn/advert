@@ -4,5 +4,9 @@
     <color name="colorPrimaryDark">#1e1921</color>
     <color name="colorAccent">#e57373</color>
     <color name="backgroundlight">#dbdadb</color>
-    <color name="backgroundfontcolor">#8a848d</color>
+    <color name="backgroundfontcolor">#dbdadb</color>
+    <color name="backgroundlightfont">#3d3342</color>
+    <color name="backgroundlightfonttwo">#8a848d</color>
+    <color name="backgroundlighttwo">#ddd</color>
+
 </resources>

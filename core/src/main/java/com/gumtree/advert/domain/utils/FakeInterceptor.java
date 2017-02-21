@@ -30,6 +30,8 @@ public class FakeInterceptor implements Interceptor {
             + "                \"http://www.italiaparchi.it/public/img/supercar.jpg\""
             + "],"
             + "                \"id\": \"1234-1234-1234-1234\","
+            + "                \"name\" : \"Michael Knight\","
+            + "                \"postingfor\" : \"+ 5 years\","
             + "                \"title\": \"KITT the Knight Rider\","
             + "                \"price\": \"100,000,000\","
             + "                \"currency\" : \"£\","
