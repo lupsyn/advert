@@ -1,5 +1,10 @@
 package com.gumtree.advert.adverting;
 
+import com.gumtree.advert.base.BaseView;
+import com.gumtree.advert.domain.model.Advert;
+
+import java.util.List;
+
 /**
  * Copyright (c) 2017.
  * All rights reserved.
@@ -7,7 +12,7 @@ package com.gumtree.advert.adverting;
  * @author enricodelzotto
  * @since 20/02/2017
  */
-public interface AdvertingView{
+public interface AdvertingView extends BaseView{
 
     void showQueryNoResult();
 
@@ -20,5 +25,13 @@ public interface AdvertingView{
     void showServiceError(ApiResponseCodeException throwable);
 
     void onBack();
+
+    void disableScroll();
+
+    void enableScroll();
+
+//    void populateGallery(List<String> links);
+//
+    void populateView(Advert advert);
 
 }

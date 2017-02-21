@@ -40,7 +40,7 @@ public class AdvertingPresenterImpl implements AdvertingPresenter {
                 .observeOn(scheduler.mainThread())
                 .subscribe(advert -> {
                             if (null != view) {
-
+                            view.populateView(advert);
                             }
                         },
                         // handle exceptions

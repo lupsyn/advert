@@ -201,4 +201,8 @@ public class Advert {
     public void setMail(String mail) {
         this.mail = mail;
     }
+
+    public String getCurrency() {
+        return currency;
+    }
 }

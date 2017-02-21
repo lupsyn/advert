@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">advert</string>
+
+    <string name="item_date_posted">Date posted</string>
+    <string name="item_make">Make</string>
+    <string name="item_transmission">Transmission</string>
+    <string name="item_model">Model</string>
+    <string name="item_year">Year</string>
+    <string name="item_colour">Colour</string>
+
+    <string name="item_enginesize">Engine size</string>
+    <string name="item_bodytype">Body type</string>
+    <string name="item_sellertype">Seller type</string>
+    <string name="item_mileage">Mileage</string>
+    <string name="item_fueltype">Fuel type</string>
+
 </resources>

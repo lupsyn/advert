@@ -1,0 +1,828 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/item_title"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:padding="24dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="22dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/backgroundfontcolor"
+            ></LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_place_black"
+                    android:scaleType="fitXY"
+                    />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+
+                    android:ellipsize="end"
+                    android:id="@+id/item_location"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.6"
+                    android:gravity="left|center"
+                    android:maxLines="1"
+                    android:textColor="@color/cardview_dark_background"
+                    android:textSize="14dp"
+                    />
+
+                <TextView
+                    android:id="@+id/item_price"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="0.4"
+                    android:gravity="center_vertical|right"
+                    android:maxLines="1"
+                    android:textColor="@color/cardview_dark_background"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--Date Posted-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_menu_black"
+                    android:scaleType="fitXY"
+                    />
+            </LinearLayout>
+
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.6"
+                android:gravity="left|center"
+                android:maxLines="1"
+                android:text="@string/item_date_posted"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="14dp"
+                />
+
+            <TextView
+                android:id="@+id/item_date"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.4"
+                android:gravity="center|right"
+                android:maxLines="1"
+
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/backgroundfontcolor"
+            ></LinearLayout>
+    </LinearLayout>
+
+    <!--Make-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_menu_black"
+                    android:scaleType="fitXY"
+                    android:visibility="invisible"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.6"
+                    android:gravity="left|center"
+                    android:maxLines="1"
+                    android:text="@string/item_make"
+                    android:textColor="@color/cardview_dark_background"
+                    android:textSize="14dp"
+                    />
+
+                <TextView
+                    android:id="@+id/item_make"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="0.4"
+                    android:gravity="center|right"
+                    android:maxLines="1"
+                    android:textColor="@color/cardview_dark_background"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/backgroundfontcolor"
+            ></LinearLayout>
+    </LinearLayout>
+
+    <!--Transmission-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_menu_black"
+                    android:scaleType="fitXY"
+                    android:visibility="invisible"
+                    />
+            </LinearLayout>
+
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.6"
+                android:gravity="left|center"
+                android:maxLines="1"
+                android:text="@string/item_transmission"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="14dp"
+                />
+
+            <TextView
+                android:id="@+id/item_transmission"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.4"
+                android:gravity="center|right"
+                android:maxLines="1"
+
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/backgroundfontcolor"
+            ></LinearLayout>
+    </LinearLayout>
+
+    <!--Model-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_menu_black"
+                    android:scaleType="fitXY"
+                    android:visibility="invisible"
+                    />
+            </LinearLayout>
+
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.6"
+                android:gravity="left|center"
+                android:maxLines="1"
+                android:text="@string/item_model"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="14dp"
+                />
+
+            <TextView
+                android:id="@+id/item_model"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.4"
+                android:gravity="center|right"
+                android:maxLines="1"
+
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/backgroundfontcolor"
+            ></LinearLayout>
+    </LinearLayout>
+
+    <!--Year-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_menu_black"
+                    android:scaleType="fitXY"
+                    android:visibility="invisible"
+                    />
+            </LinearLayout>
+
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.6"
+                android:gravity="left|center"
+                android:maxLines="1"
+                android:text="@string/item_year"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="14dp"
+                />
+
+            <TextView
+                android:id="@+id/item_year"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.4"
+                android:gravity="center|right"
+                android:maxLines="1"
+
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/backgroundfontcolor"
+            ></LinearLayout>
+    </LinearLayout>
+
+    <!--Colour-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_menu_black"
+                    android:scaleType="fitXY"
+                    android:visibility="invisible"
+                    />
+            </LinearLayout>
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.6"
+                android:gravity="left|center"
+                android:maxLines="1"
+                android:text="@string/item_colour"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="14dp"
+                />
+
+            <TextView
+                android:id="@+id/item_colour"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.4"
+                android:gravity="center|right"
+                android:maxLines="1"
+
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/backgroundfontcolor"
+            ></LinearLayout>
+    </LinearLayout>
+
+    <!--Engine Size-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_menu_black"
+                    android:scaleType="fitXY"
+                    android:visibility="invisible"
+                    />
+            </LinearLayout>
+
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.6"
+                android:gravity="left|center"
+                android:maxLines="1"
+                android:text="@string/item_enginesize"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="14dp"
+                />
+
+            <TextView
+                android:id="@+id/item_engine_size"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.4"
+                android:gravity="center|right"
+                android:maxLines="1"
+
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/backgroundfontcolor"
+            ></LinearLayout>
+    </LinearLayout>
+
+    <!--Body Type-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_menu_black"
+                    android:scaleType="fitXY"
+                    android:visibility="invisible"
+                    />
+            </LinearLayout>
+
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.6"
+                android:gravity="left|center"
+                android:maxLines="1"
+                android:text="@string/item_bodytype"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="14dp"
+                />
+
+            <TextView
+                android:id="@+id/item_body_type"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.4"
+                android:gravity="center|right"
+                android:maxLines="1"
+
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/backgroundfontcolor"
+            ></LinearLayout>
+    </LinearLayout>
+
+    <!--Seller Type-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_menu_black"
+                    android:scaleType="fitXY"
+                    android:visibility="invisible"
+                    />
+            </LinearLayout>
+
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.6"
+                android:gravity="left|center"
+                android:maxLines="1"
+                android:text="@string/item_sellertype"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="14dp"
+                />
+
+            <TextView
+                android:id="@+id/item_seller_type"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.4"
+                android:gravity="center|right"
+                android:maxLines="1"
+
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/backgroundfontcolor"
+            ></LinearLayout>
+    </LinearLayout>
+
+    <!--Mileage Type-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_menu_black"
+                    android:scaleType="fitXY"
+                    android:visibility="invisible"
+                    />
+            </LinearLayout>
+
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.6"
+                android:gravity="left|center"
+                android:maxLines="1"
+                android:text="@string/item_mileage"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="14dp"
+                />
+
+            <TextView
+                android:id="@+id/item_mile_age"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.4"
+                android:gravity="center|right"
+                android:maxLines="1"
+
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/backgroundfontcolor"
+            ></LinearLayout>
+    </LinearLayout>
+
+    <!--Fuel Type Type-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_menu_black"
+                    android:scaleType="fitXY"
+                    android:visibility="invisible"
+                    />
+            </LinearLayout>
+
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.6"
+                android:gravity="left|center"
+                android:maxLines="1"
+                android:text="@string/item_fueltype"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="14dp"
+                />
+
+            <TextView
+                android:id="@+id/item_fuel_type"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.4"
+                android:gravity="center|right"
+                android:maxLines="1"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/backgroundfontcolor"
+            ></LinearLayout>
+    </LinearLayout>
+</LinearLayout>
