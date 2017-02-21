@@ -41,6 +41,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import rx.Observable;
 import rx.subjects.PublishSubject;
+import rx.subscriptions.CompositeSubscription;
 import timber.log.Timber;
 
 /**
@@ -124,6 +125,7 @@ public class AdvertingFragment extends BaseFragment implements AdvertingView {
     public void onAttach(Context context) {
         super.onAttach(context);
         presenter.bind(this);
+
     }
 
 
@@ -146,6 +148,7 @@ public class AdvertingFragment extends BaseFragment implements AdvertingView {
     public void onDetach() {
         super.onDetach();
         presenter.unbind();
+
     }
 
     @Override

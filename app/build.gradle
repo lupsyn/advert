@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'jacoco-android'
 apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'com.neenbedankt.android-apt'
 
 
 android {
@@ -13,8 +13,9 @@ android {
         targetSdkVersion rootProject.ext.compileSdkVersion
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-    }
+//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.gumtree.advert.CustomTestRunner"
+     }
     buildTypes {
         release {
             minifyEnabled false
@@ -22,8 +23,8 @@ android {
         }
 
         debug {
-            applicationIdSuffix '.debug'
-            versionNameSuffix '-debug'
+//            applicationIdSuffix '.debug'
+//            versionNameSuffix '-debug'
 
             // Run code coverage reports by default on debug builds.
             testCoverageEnabled false
@@ -35,6 +36,12 @@ android {
 //    }
 
     /* fixes espresso conflict with supportAnnotation and androidSupport new versions */
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+
     configurations.all {
         resolutionStrategy {
             force rootProject.ext.testLibraries.supportAnnotations
@@ -44,15 +51,35 @@ android {
             force rootProject.ext.libraries.recyclerView
         }
     }
-    compileOptions {
-        targetCompatibility 1.8
-        sourceCompatibility 1.8
+}
+
+
+
+// Source: http://stackoverflow.com/q/29908110/112705
+// Grant animation permissions to avoid test failure because of ui sync.
+task grantAnimationPermissions(type: Exec, dependsOn: 'installMock') {
+    group = 'test'
+    description = 'Grant permissions for testing.'
+
+    def absolutePath = file('..') // Get project absolute path
+    commandLine "$absolutePath/set_animation_permissions.sh com.gumtree.advert".split(" ")
+}
+
+// Source: http://stackoverflow.com/q/29908110/112705
+afterEvaluate {
+    tasks.each { task ->
+        if (task.name.startsWith('assembleMockAndroidTest')) {
+            task.dependsOn grantAnimationPermissions
+        }
     }
 }
+
 jacocoAndroidUnitTestReport {
     // fix jacoco issue with ButterKnife
     excludes += ['**/*$ViewBinder*.*']
 }
+
+
 dependencies {
     compile project(':core')
     compile fileTree(dir: 'libs', include: ['*.jar'])

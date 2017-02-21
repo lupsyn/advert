@@ -232,4 +232,31 @@ public class Advert {
         return lat;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPostingfor(String postingfor) {
+        this.postingfor = postingfor;
+    }
+
+    public void setLat(Double lat) {
+        this.lat = lat;
+    }
+
+    public void setLng(Double lng) {
+        this.lng = lng;
+    }
 }

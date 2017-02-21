@@ -197,8 +197,6 @@ public class MainActivity extends BaseActivity {
     @OnClick(R.id.toolbar_share)
     void onToolbarShare(View view) {
         mAdvertingFragment.onShareClick();
-
-//
     }
 
     @OnClick(R.id.toolbar_favourite)

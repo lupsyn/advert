@@ -9,11 +9,15 @@ import android.widget.ImageView;
 
 import com.gumtree.advert.R;
 import com.gumtree.advert.activity.MainActivity;
+import com.jakewharton.rxbinding.view.RxView;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 
 import java.util.List;
+
+import rx.Observable;
+import rx.subjects.PublishSubject;
 
 /**
  * Copyright (c) 2017.
@@ -27,6 +31,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     private Context mContext;
     private List<String> mSetList;
     private MainActivity.Callback mCallback;
+    private PublishSubject<String> notify = PublishSubject.create();
 
     public MainAdapter(Context context, List<String> setList) {
         mContext = context;
@@ -47,6 +52,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
         final String link = mSetList.get(position);
         if (link != null)
+
             Picasso.with(mContext).load(link).into(holder.mImageView, new Callback() {
                 @Override
                 public void onSuccess() {
@@ -92,5 +98,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         notifyDataSetChanged();
     }
 
-
+    //TODO : implement callback with rxJava
+    public Observable<String> asObservable() {
+        return notify.asObservable();
+    }
 }
