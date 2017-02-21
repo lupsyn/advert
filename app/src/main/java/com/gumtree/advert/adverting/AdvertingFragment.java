@@ -279,13 +279,10 @@ public class AdvertingFragment extends BaseFragment implements AdvertingView {
         mItemMileAge.setText(advert.getMileage());
         mItemFuelType.setText(advert.getFueltype());
         mItemLongDescr.setText(advert.getLongdescription());
-        mMapView.getMapAsync(new OnMapReadyCallback() {
-            @Override
-            public void onMapReady(GoogleMap googleMap) {
-                MapsInitializer.initialize(getContext());
-                map = googleMap;
-                setMapLocation(map, new NamedLocation(advert.getLocation(), new LatLng(advert.getLat(), advert.getLng())));
-            }
+        mMapView.getMapAsync(googleMap -> {
+            MapsInitializer.initialize(getContext());
+            map = googleMap;
+            setMapLocation(map, new NamedLocation(advert.getLocation(), new LatLng(advert.getLat(), advert.getLng())));
         });
     }
 

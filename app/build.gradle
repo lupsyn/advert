@@ -30,10 +30,10 @@ android {
             testCoverageEnabled false
         }
     }
-//    compileOptions {
-//        targetCompatibility JavaVersion.VERSION_1_8
-//        sourceCompatibility JavaVersion.VERSION_1_8
-//    }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
 
     /* fixes espresso conflict with supportAnnotation and androidSupport new versions */
 

@@ -137,16 +137,9 @@ public class MainActivity extends BaseActivity {
         mPostingFor.setText(advert.getPostingfor());
         mMainAdapter.clear();
         // ...the data has come back, add new items to your adapter...
-        mMainAdapter.addAll(advert.getLinks(), new Callback() {
-            @Override
-            public void onLoad() {
-                mAppBarLayout.setExpanded(true, true);
-            }
-        });
+        mMainAdapter.addAll(advert.getLinks(), () -> mAppBarLayout.setExpanded(true, true));
         // Now we call setRefreshing(false) to signal refresh has finished
         mMainAdapter.notifyDataSetChanged();
-
-
     }
 
     public void showMessage(String message) {
