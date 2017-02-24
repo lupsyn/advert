@@ -4,6 +4,7 @@ package com.gumtree.advert.domain;
 import com.gumtree.advert.domain.utils.FakeInterceptor;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import javax.inject.Named;
@@ -15,6 +16,7 @@ import okhttp3.Cache;
 import okhttp3.CacheControl;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
+import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
 
@@ -39,11 +41,13 @@ public class ClientModule {
                                             @Named("networkTimeoutInSeconds") int networkTimeoutInSeconds,
                                             @Named("isDebug") boolean isDebug,
                                             Cache cache,
-                                            @Named("fakeInterceptor") Interceptor fakeInterceptor
+                                            @Named("fakeInterceptor") Interceptor fakeInterceptor,
+                                            @Named("retryInterceptor") Interceptor retryInterceptor
                                             ) {
 
         OkHttpClient.Builder okHttpClient = new OkHttpClient.Builder()
 //                .addNetworkInterceptor(cacheInterceptor)
+                .addInterceptor(retryInterceptor)
                 .addInterceptor(fakeInterceptor)
                 .cache(cache)
                 .connectTimeout(networkTimeoutInSeconds, TimeUnit.SECONDS);
@@ -123,33 +127,33 @@ public class ClientModule {
 //        };
 //    }
 
-//    @Singleton
-//    @Provides
-//    @Named("retryInterceptor")
-//    public Interceptor provideRetryInterceptor(@Named("retryCount") int retryCount) {
-//        return chain -> {
-//            Request request = chain.request();
-//            Response response = null;
-//            IOException exception = null;
-//
-//            int tryCount = 0;
-//            while (tryCount < retryCount && (null == response || !response.isSuccessful())) {
-//                // retry the request
-//                try {
-//                    response = chain.proceed(request);
-//                } catch (IOException e) {
-//                    exception = e;
-//                } finally {
-//                    tryCount++;
-//                }
-//            }
-//
-//            // throw last exception
-//            if (null == response && null != exception)
-//                throw exception;
-//
-//            // otherwise just pass the original response on
-//            return response;
-//        };
-//    }
+    @Singleton
+    @Provides
+    @Named("retryInterceptor")
+    public Interceptor provideRetryInterceptor(@Named("retryCount") int retryCount) {
+        return chain -> {
+            Request request = chain.request();
+            Response response = null;
+            IOException exception = null;
+
+            int tryCount = 0;
+            while (tryCount < retryCount && (null == response || !response.isSuccessful())) {
+                // retry the request
+                try {
+                    response = chain.proceed(request);
+                } catch (IOException e) {
+                    exception = e;
+                } finally {
+                    tryCount++;
+                }
+            }
+
+            // throw last exception
+            if (null == response && null != exception)
+                throw exception;
+
+            // otherwise just pass the original response on
+            return response;
+        };
+    }
 }
