@@ -1,4 +1,4 @@
-# Gumtree Android app coding challenge
+# Android app coding challenge
 ## The task
 Your task is to implement an Advert details screen for the Gumtree app. You can check an example at the link/image below. Additionally, feel free to have a look at some other Advert details screen examples by downloading the Gumtree application in google play (https://play.google.com/store/apps/details?id=com.gumtree.android)
 
